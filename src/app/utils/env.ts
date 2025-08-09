@@ -13,7 +13,7 @@ const env = {
     jwt: {
         publicKey: process.env.API_PUBLIC_KEY!!,
         privateKey: process.env.API_PRIVATE_KEY!!,
-        issuer: process.env.API_ISSUER || "LeavesMC",
+        issuer: process.env.API_ISSUER || "MenthaMC",
         subject: process.env.API_SUBJECT || "leaves-ci",
         algorithm: process.env.API_ALGO as Algorithm || "ES256",
     },

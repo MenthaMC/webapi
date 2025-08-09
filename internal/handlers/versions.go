@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"strconv"
-	"webapi-v2-neo/internal/utils"
+	"webapi/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

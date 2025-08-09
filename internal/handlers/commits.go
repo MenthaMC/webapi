@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"webapi-v2-neo/internal/logger"
-	"webapi-v2-neo/internal/models"
-	"webapi-v2-neo/internal/utils"
+	"webapi/internal/logger"
+	"webapi/internal/models"
+	"webapi/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

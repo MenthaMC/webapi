@@ -2,9 +2,9 @@ package app
 
 import (
 	"database/sql"
-	"webapi-v2-neo/internal/config"
-	"webapi-v2-neo/internal/handlers"
-	"webapi-v2-neo/internal/middleware"
+	"webapi/internal/config"
+	"webapi/internal/handlers"
+	"webapi/internal/middleware"
 
 	"github.com/gin-gonic/gin"
 )

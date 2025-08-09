@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"strings"
-	"webapi-v2-neo/internal/models"
+	"webapi/internal/models"
 )
 
 type ChangeService struct {

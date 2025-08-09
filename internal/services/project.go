@@ -2,7 +2,7 @@ package services
 
 import (
 	"database/sql"
-	"webapi-v2-neo/internal/models"
+	"webapi/internal/models"
 )
 
 type ProjectService struct {

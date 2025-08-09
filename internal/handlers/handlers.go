@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"database/sql"
-	"webapi-v2-neo/internal/config"
-	"webapi-v2-neo/internal/services"
+	"webapi/internal/config"
+	"webapi/internal/services"
 )
 
 type Handlers struct {

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"webapi-v2-neo/internal/utils"
+	"webapi/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

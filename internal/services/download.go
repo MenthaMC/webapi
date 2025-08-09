@@ -3,7 +3,7 @@ package services
 import (
 	"database/sql"
 	"fmt"
-	"webapi-v2-neo/internal/models"
+	"webapi/internal/models"
 )
 
 type DownloadService struct {

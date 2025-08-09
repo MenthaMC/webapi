@@ -1,6 +1,6 @@
 # 项目结构检查脚本
 
-Write-Host "🔍 Checking LeavesMC WebAPI v2 Go Project Structure" -ForegroundColor Green
+Write-Host "🔍 Checking MenthaMC WebAPI v2 Go Project Structure" -ForegroundColor Green
 
 $errors = @()
 $warnings = @()
@@ -89,7 +89,7 @@ if (Test-Path ".env") {
 Write-Host "`n📦 Checking Go module..." -ForegroundColor Cyan
 if (Test-Path "go.mod") {
     $goMod = Get-Content "go.mod" -Raw
-    if ($goMod -match "module webapi-v2-neo") {
+    if ($goMod -match "module webapi") {
         Write-Host "  ✅ Go module configured correctly" -ForegroundColor Green
     } else {
         Write-Host "  ⚠️  Go module name might be incorrect" -ForegroundColor Yellow

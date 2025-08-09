@@ -7,6 +7,6 @@ const server = http.createServer();
 server.on("request", app.httpHandler());
 
 server.listen(env.port, () => {
-    console.log("LeavesMC WebAPI serve (Powered by VCLight)");
+    console.log("MenthaMC WebAPI serve (Powered by VCLight)");
     console.log(`> Ready! Available at http://localhost:${env.port}`);
 });

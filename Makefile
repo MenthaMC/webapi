@@ -1,8 +1,8 @@
 .PHONY: build run test clean dev docker-build docker-run
 
 # 变量定义
-BINARY_NAME=webapi-v2-neo
-DOCKER_IMAGE=webapi-v2-neo
+BINARY_NAME=webapi
+DOCKER_IMAGE=webapi
 VERSION?=latest
 
 # 构建

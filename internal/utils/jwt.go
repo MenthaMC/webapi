@@ -5,7 +5,7 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"
-	"webapi-v2-neo/internal/config"
+	"webapi/internal/config"
 
 	"github.com/golang-jwt/jwt/v5"
 )

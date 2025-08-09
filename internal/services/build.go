@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 	"time"
-	"webapi-v2-neo/internal/models"
+	"webapi/internal/models"
 
 	"github.com/lib/pq"
 )

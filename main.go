@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
-	"webapi-v2-neo/internal/app"
-	"webapi-v2-neo/internal/config"
-	"webapi-v2-neo/internal/database"
-	"webapi-v2-neo/internal/logger"
+	"webapi/internal/app"
+	"webapi/internal/config"
+	"webapi/internal/database"
+	"webapi/internal/logger"
 )
 
 func main() {
@@ -30,7 +30,7 @@ func main() {
 	application := app.New(cfg, db)
 
 	// 启动服务器
-	logger.Info("LeavesMC WebAPI serve (Powered by Gin)")
+	logger.Info("MenthaMC WebAPI serve (Powered by Gin)")
 	logger.Info(fmt.Sprintf("> Ready! Available at http://localhost:%d", cfg.Port))
 	
 	if err := application.Run(fmt.Sprintf(":%d", cfg.Port)); err != nil {

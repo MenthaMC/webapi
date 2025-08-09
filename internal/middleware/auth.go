@@ -3,8 +3,8 @@ package middleware
 import (
 	"net/http"
 	"strings"
-	"webapi-v2-neo/internal/config"
-	"webapi-v2-neo/internal/utils"
+	"webapi/internal/config"
+	"webapi/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

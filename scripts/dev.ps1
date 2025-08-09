@@ -1,6 +1,6 @@
 # 开发环境启动脚本 (PowerShell)
 
-Write-Host "🚀 Starting LeavesMC WebAPI v2 Development Environment" -ForegroundColor Green
+Write-Host "🚀 Starting MenthaMC WebAPI v2 Development Environment" -ForegroundColor Green
 
 # 检查是否存在 .env 文件
 if (-not (Test-Path ".env")) {

@@ -12,7 +12,7 @@ const DB_CONFIG = {
 };
 const PROJECT_ID = "leaves";
 const PROJECT_NAME = "Leaves";
-const PROJECT_REPO = "https://github.com/LeavesMC/leaves";
+const PROJECT_REPO = "https://github.com/MenthaMC/leaves";
 const JSON_DIR = ".";
 const JSON_PATTERN = /^(.+)\.json$/;
 // ===========================================

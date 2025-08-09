@@ -32,7 +32,7 @@
 
 ```bash
 git clone <repository-url>
-cd webapi-v2-neo
+cd webapi
 ```
 
 ### 3. 安装依赖
@@ -137,7 +137,7 @@ go test ./...
 ### 构建
 
 ```bash
-go build -o webapi-v2-neo main.go
+go build -o webapi main.go
 ```
 
 ### 生产部署
@@ -156,7 +156,7 @@ go build -o webapi-v2-neo main.go
 | LOG_LEVEL | 否 | info | 日志级别 |
 | API_PUBLIC_KEY | 是 | - | JWT 公钥 |
 | API_PRIVATE_KEY | 是 | - | JWT 私钥 |
-| API_ISSUER | 否 | LeavesMC | JWT 发行者 |
+| API_ISSUER | 否 | MenthaMC | JWT 发行者 |
 | API_SUBJECT | 否 | leaves-ci | JWT 主题 |
 | API_ALGO | 否 | ES256 | JWT 算法 |
 | COMMIT_BUILD_WEBHOOK_URL | 否 | - | 构建提交 Webhook URL |

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
-	"webapi-v2-neo/internal/logger"
+	"webapi/internal/logger"
 
 	_ "github.com/lib/pq"
 )

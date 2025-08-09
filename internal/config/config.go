@@ -51,7 +51,7 @@ func Load() (*Config, error) {
 		JWT: JWTConfig{
 			PublicKey:  getEnvRequired("API_PUBLIC_KEY"),
 			PrivateKey: getEnvRequired("API_PRIVATE_KEY"),
-			Issuer:     getEnvDefault("API_ISSUER", "LeavesMC"),
+			Issuer:     getEnvDefault("API_ISSUER", "MenthaMC"),
 			Subject:    getEnvDefault("API_SUBJECT", "leaves-ci"),
 			Algorithm:  getEnvDefault("API_ALGO", "ES256"),
 		},

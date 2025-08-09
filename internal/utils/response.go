@@ -2,7 +2,7 @@ package utils
 
 import (
 	"net/http"
-	"webapi-v2-neo/internal/models"
+	"webapi/internal/models"
 
 	"github.com/gin-gonic/gin"
 )

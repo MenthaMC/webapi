@@ -1,4 +1,4 @@
-module webapi-v2-neo
+module webapi
 
 go 1.21
 

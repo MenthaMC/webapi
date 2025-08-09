@@ -4,7 +4,7 @@
 
 set -e
 
-echo "🚀 Starting LeavesMC WebAPI v2 Development Environment"
+echo "🚀 Starting MenthaMC WebAPI v2 Development Environment"
 
 # 检查是否存在 .env 文件
 if [ ! -f .env ]; then
