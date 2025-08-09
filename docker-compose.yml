@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  webapi:
+    build: .
+    ports:
+      - "32767:32767"
+    environment:
+      - PORT=32767
+      - DB_URL=postgres://webapi:password@db:5432/webapi_v2?sslmode=disable
+      - LOG_LEVEL=info
+      - API_PUBLIC_KEY=${API_PUBLIC_KEY}
+      - API_PRIVATE_KEY=${API_PRIVATE_KEY}
+      - API_ISSUER=LeavesMC
+      - API_SUBJECT=leaves-ci
+      - API_ALGO=ES256
+      - COMMIT_BUILD_WEBHOOK_URL=${COMMIT_BUILD_WEBHOOK_URL}
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=webapi_v2
+      - POSTGRES_USER=webapi
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
