@@ -159,7 +159,7 @@ go build -o webapi main.go
 | API_PUBLIC_KEY | 是 | - | JWT 公钥 |
 | API_PRIVATE_KEY | 是 | - | JWT 私钥 |
 | API_ISSUER | 否 | MenthaMC | JWT 发行者 |
-| API_SUBJECT | 否 | leaves-ci | JWT 主题 |
+| API_SUBJECT | 否 | mentha-ci | JWT 主题 |
 | API_ALGO | 否 | ES256 | JWT 算法 |
 | COMMIT_BUILD_WEBHOOK_URL | 否 | - | 构建提交 Webhook URL |
 
