@@ -12,7 +12,7 @@ services:
       - API_PUBLIC_KEY=${API_PUBLIC_KEY}
       - API_PRIVATE_KEY=${API_PRIVATE_KEY}
       - API_ISSUER=MenthaMC
-      - API_SUBJECT=leaves-ci
+      - API_SUBJECT=mentha-ci
       - API_ALGO=ES256
       - COMMIT_BUILD_WEBHOOK_URL=${COMMIT_BUILD_WEBHOOK_URL}
     depends_on:
