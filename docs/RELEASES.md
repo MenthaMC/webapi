@@ -68,7 +68,7 @@ GET /v2/projects/{project}/releases?limit=20&offset=0
         {
           "name": "mint-1.20.4.jar",
           "size": 12345678,
-          "browser_download_url": "https://github.com/MenthaMC/Mint/releases/tag/v1.20.4/paper-1.20.4.jar"
+          "browser_download_url": "https://github.com/MenthaMC/Mint/releases/tag/v1.20.4/mint-1.20.4.jar"
         }
       ]
     }
@@ -99,8 +99,8 @@ POST /v2/projects/{project}/releases/config
 Content-Type: application/json
 
 {
-  "repo_owner": "PaperMC",
-  "repo_name": "Paper",
+  "repo_owner": "MenthaMC",
+  "repo_name": "Mint",
   "access_token": "ghp_xxxxxxxxxxxx",
   "auto_sync": true,
   "sync_interval": 30,
@@ -174,9 +174,9 @@ psql -d webapi -f sql/releases_migration.sql
 ```bash
 go run cmd/release-manager/main.go \
   -action=config \
-  -project=paper \
-  -owner=PaperMC \
-  -repo=Paper \
+  -project=mint \
+  -owner=MenthaMC \
+  -repo=Mint \
   -auto \
   -interval=60
 ```
