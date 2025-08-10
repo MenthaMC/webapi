@@ -6,7 +6,6 @@
 - 项目管理和版本控制
 - 构建信息查询和管理
 - 文件下载服务
-- **GitHub Releases 自动同步** ✨
 - JWT 认证
 - PostgreSQL 数据库支持
 - 自动数据库迁移
@@ -163,30 +162,6 @@ go build -o webapi main.go
 | API_SUBJECT | 否 | leaves-ci | JWT 主题 |
 | API_ALGO | 否 | ES256 | JWT 算法 |
 | COMMIT_BUILD_WEBHOOK_URL | 否 | - | 构建提交 Webhook URL |
-| GITHUB_TOKEN | 否 | - | GitHub Personal Access Token |
-| GITHUB_SYNC_INTERVAL | 否 | 1h | GitHub Releases 同步间隔 |
-
-## GitHub Releases 自动同步
-
-新增的 GitHub Releases 自动同步功能可以自动从 GitHub 仓库拉取 Releases 信息并同步到数据库中。
-
-详细配置和使用说明请参考：[RELEASES_SYNC.md](./RELEASES_SYNC.md)
-
-### 快速配置
-
-1. 获取 GitHub Personal Access Token
-2. 在 `.env` 文件中配置：
-   ```env
-   GITHUB_TOKEN=your_github_token_here
-   GITHUB_SYNC_INTERVAL=1h
-   ```
-3. 重启服务即可自动开始同步
-
-### 新增 API 端点
-
-- `GET /v2/sync/status` - 获取同步状态
-- `POST /v2/sync/trigger` - 手动触发全量同步（需要认证）
-- `POST /v2/projects/{project}/sync` - 同步指定项目（需要认证）
 
 ## 许可证
 

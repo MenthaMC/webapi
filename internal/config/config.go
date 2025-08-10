@@ -13,7 +13,6 @@ type Config struct {
 	LogLevel string
 	JWT      JWTConfig
 	Webhook  WebhookConfig
-	GitHub   GitHubConfig
 }
 
 type DatabaseConfig struct {
@@ -30,11 +29,6 @@ type JWTConfig struct {
 
 type WebhookConfig struct {
 	CommitBuildURL string
-}
-
-type GitHubConfig struct {
-	Token        string
-	SyncInterval string
 }
 
 func Load() (*Config, error) {
@@ -63,10 +57,6 @@ func Load() (*Config, error) {
 		},
 		Webhook: WebhookConfig{
 			CommitBuildURL: os.Getenv("COMMIT_BUILD_WEBHOOK_URL"),
-		},
-		GitHub: GitHubConfig{
-			Token:        os.Getenv("GITHUB_TOKEN"),
-			SyncInterval: getEnvDefault("GITHUB_SYNC_INTERVAL", "1h"),
 		},
 	}
 

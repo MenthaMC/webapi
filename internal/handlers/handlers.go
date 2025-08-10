@@ -7,17 +7,15 @@ import (
 )
 
 type Handlers struct {
-	config    *config.Config
-	db        *sql.DB
-	services  *services.Services
-	scheduler *services.SchedulerService
+	config   *config.Config
+	db       *sql.DB
+	services *services.Services
 }
 
-func New(cfg *config.Config, database *sql.DB, scheduler *services.SchedulerService) *Handlers {
+func New(cfg *config.Config, database *sql.DB) *Handlers {
 	return &Handlers{
-		config:    cfg,
-		db:        database,
-		services:  services.New(database),
-		scheduler: scheduler,
+		config:   cfg,
+		db:       database,
+		services: services.New(database),
 	}
 }
