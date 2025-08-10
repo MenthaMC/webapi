@@ -108,3 +108,59 @@ func (s *VersionService) GetLatestBuildID(projectID string, versionIDs []int) (i
 	
 	return latestBuildID, nil
 }
+
+// CreateVersionGroup 创建版本组
+func (s *VersionService) CreateVersionGroup(projectID, name string) (int, error) {
+	var versionGroupID int
+	err := s.db.QueryRow(`
+		INSERT INTO version_groups (project, name) 
+		VALUES ($1, $2) 
+		RETURNING id
+	`, projectID, name).Scan(&versionGroupID)
+	
+	if err != nil {
+		return 0, err
+	}
+	
+	return versionGroupID, nil
+}
+
+// CreateVersion 创建版本
+func (s *VersionService) CreateVersion(projectID, name string, versionGroupID int) (int, error) {
+	var versionID int
+	err := s.db.QueryRow(`
+		INSERT INTO versions (name, project, version_group) 
+		VALUES ($1, $2, $3) 
+		RETURNING id
+	`, name, projectID, versionGroupID).Scan(&versionID)
+	
+	if err != nil {
+		return 0, err
+	}
+	
+	return versionID, nil
+}
+
+// GetOrCreateVersionGroup 获取或创建版本组
+func (s *VersionService) GetOrCreateVersionGroup(projectID, name string) (int, error) {
+	// 先尝试获取现有的版本组
+	versionGroupID, err := s.GetVersionGroupIDByName(projectID, name)
+	if err == nil {
+		return versionGroupID, nil
+	}
+	
+	// 如果不存在，则创建新的版本组
+	return s.CreateVersionGroup(projectID, name)
+}
+
+// GetOrCreateVersion 获取或创建版本
+func (s *VersionService) GetOrCreateVersion(projectID, versionName string, versionGroupID int) (int, error) {
+	// 先尝试获取现有版本
+	versionID, err := s.GetVersionID(projectID, versionName)
+	if err == nil {
+		return versionID, nil
+	}
+	
+	// 如果不存在，则创建新版本
+	return s.CreateVersion(projectID, versionName, versionGroupID)
+}
