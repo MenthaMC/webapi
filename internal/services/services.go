@@ -11,13 +11,9 @@ type Services struct {
 	Download    *DownloadService
 	Change      *ChangeService
 	VersionGroup *VersionGroupService
-	Release     *ReleaseService
-	Scheduler   *SchedulerService
 }
 
 func New(db *sql.DB) *Services {
-	releaseService := NewReleaseService(db)
-	
 	return &Services{
 		Project:      NewProjectService(db),
 		Version:      NewVersionService(db),
@@ -25,7 +21,5 @@ func New(db *sql.DB) *Services {
 		Download:     NewDownloadService(db),
 		Change:       NewChangeService(db),
 		VersionGroup: NewVersionGroupService(db),
-		Release:      releaseService,
-		Scheduler:    NewSchedulerService(db, releaseService),
 	}
 }

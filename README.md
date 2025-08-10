@@ -154,12 +154,12 @@ go build -o webapi main.go
 | 变量名 | 必需 | 默认值 | 说明 |
 |--------|------|--------|------|
 | PORT | 否 | 32767 | 服务端口 |
-| DB_URL | 是 | postgres://webapi:password@localhost:5432/webapi?sslmode=disable | PostgreSQL 连接字符串 |
+| DB_URL | 是 | - | PostgreSQL 连接字符串 |
 | LOG_LEVEL | 否 | info | 日志级别 |
-| API_PUBLIC_KEY | 是 | nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYour-public-key-here | JWT 公钥 |
-| API_PRIVATE_KEY | 是 | nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgyour-private-key-here | JWT 私钥 |
+| API_PUBLIC_KEY | 是 | - | JWT 公钥 |
+| API_PRIVATE_KEY | 是 | - | JWT 私钥 |
 | API_ISSUER | 否 | MenthaMC | JWT 发行者 |
-| API_SUBJECT | 否 | mentha-ci | JWT 主题 |
+| API_SUBJECT | 否 | leaves-ci | JWT 主题 |
 | API_ALGO | 否 | ES256 | JWT 算法 |
 | COMMIT_BUILD_WEBHOOK_URL | 否 | - | 构建提交 Webhook URL |
 
