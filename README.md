@@ -54,8 +54,10 @@ cp .env.example .env
 - `API_PRIVATE_KEY`: JWT 私钥
 
 ### 5. 初始化数据库
-
-确保 PostgreSQL 服务运行，并创建数据库。应用启动时会自动执行数据库初始化脚本。
+```bash
+docker-compose up -d
+```
+使用docker创建数据库，应用启动时会自动执行数据库初始化脚本。
 
 ### 6. 启动服务
 
