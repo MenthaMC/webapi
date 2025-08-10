@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const audience = "/v2/commit/build/download_source"; // or other api endpoint, or "*" for all endpoints
 const issuer = "MenthaMC"; // when modify here, also modify in the server environment variable API_ISSUER
-const subject = "leaves-ci"; // when modify here, also modify in the server environment variable API_SUBJECT
+const subject = "mentha-ci"; // when modify here, also modify in the server environment variable API_SUBJECT
 const algorithm = "ES256"; // when modify here, also modify in the server environment variable API_ALGO. supported: https://github.com/auth0/node-jsonwebtoken#algorithms-supported
 const expiration = "10y";
 

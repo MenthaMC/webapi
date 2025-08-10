@@ -10,9 +10,9 @@ const DB_CONFIG = {
     port: 5432,
     database: "postgres"
 };
-const PROJECT_ID = "leaves";
-const PROJECT_NAME = "Leaves";
-const PROJECT_REPO = "https://github.com/MenthaMC/leaves";
+const PROJECT_ID = "mint";
+const PROJECT_NAME = "Mint";
+const PROJECT_REPO = "https://github.com/MenthaMC/Mint";
 const JSON_DIR = ".";
 const JSON_PATTERN = /^(.+)\.json$/;
 // ===========================================

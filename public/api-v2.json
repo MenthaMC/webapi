@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://api.leavesmc.org"
+      "url": "https://api.menthamc.com"
     },
     {
       "url": "http://localhost:32767"
@@ -127,8 +127,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version_groups": [
                     "1.20",
                     "1.19"
@@ -228,8 +228,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version": "1.20",
                   "builds": [
                     1,
@@ -322,8 +322,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version": "1.20",
                   "builds": [
                     {
@@ -585,8 +585,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version": "1.20",
                   "build": 1,
                   "time": "2023-08-03T06:12:14.887Z",
@@ -691,8 +691,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version_group": "1.20",
                   "versions": [
                     "1.20.1",
@@ -787,8 +787,8 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "mint",
+                  "project_name": "Mint",
                   "version_group": "1.20",
                   "versions": [
                     "1.20.1",
@@ -973,11 +973,11 @@
                 ]
               },
               "example": {
-                "project_id": "leaves",
+                "project_id": "mint",
                 "version": "1.20.1",
                 "channel": "default",
                 "changes": "changes",
-                "jar_name": "leaves-1.20.1.jar",
+                "jar_name": "mint-1.20.1.jar",
                 "sha256": "sha256",
                 "tag": "1.20.1-1a2b3c4"
               }
@@ -1037,8 +1037,8 @@
               },
               "example": {
                 "download_source": "example",
-                "url": "https://example.com/downloads/leaves-1.20.1.jar",
-                "project": "leaves",
+                "url": "https://example.com/downloads/mint-1.20.1.jar",
+                "project": "mint",
                 "tag": "1.20.1-1a2b3c4"
               }
             }
@@ -1093,7 +1093,7 @@
               },
               "example": {
                 "download_source": "example",
-                "project": "leaves",
+                "project": "mint",
                 "tag": "1.20.1-1a2b3c4"
               }
             }
