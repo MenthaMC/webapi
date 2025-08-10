@@ -20,7 +20,7 @@
 - **日志**: Logrus
 - **配置**: 环境变量 + .env 文件
 
-## 快速开始
+## 快速开始(Linux)
 
 ### 1. 环境准备
 
@@ -31,7 +31,7 @@
 ### 2. 克隆项目
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/MenthaMC/webapi
 cd webapi
 ```
 
@@ -54,8 +54,10 @@ cp .env.example .env
 - `API_PRIVATE_KEY`: JWT 私钥
 
 ### 5. 初始化数据库
-
-确保 PostgreSQL 服务运行，并创建数据库。应用启动时会自动执行数据库初始化脚本。
+```bash
+docker-compose up -d
+```
+使用docker创建数据库，应用启动时会自动执行数据库初始化脚本。
 
 ### 6. 启动服务
 
