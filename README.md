@@ -20,7 +20,7 @@
 - **日志**: Logrus
 - **配置**: 环境变量 + .env 文件
 
-## 快速开始
+## 快速开始(Linux)
 
 ### 1. 环境准备
 
@@ -31,7 +31,7 @@
 ### 2. 克隆项目
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/MenthaMC/webapi
 cd webapi
 ```
 
