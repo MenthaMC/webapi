@@ -49,6 +49,9 @@ func (a *App) Run(addr string) error {
 func (a *App) setupRoutes() {
 	h := handlers.New(a.config, a.db)
 
+	// 启动Release调度器
+	h.StartScheduler()
+
 	// 静态文件和文档
 	a.router.GET("/", h.RedirectToAPI)
 	a.router.GET("/favicon.ico", h.ServeFavicon)
@@ -70,6 +73,11 @@ func (a *App) setupRoutes() {
 		v2.GET("/projects/:project/version_group/:family/builds", h.GetVersionGroupBuilds)
 		v2.GET("/projects/:project/versions/:version/builds/:build/downloads/:download", h.DownloadBuild)
 
+		// Release相关路由
+		v2.GET("/projects/:project/releases", h.GetReleases)
+		v2.GET("/projects/:project/releases/latest", h.GetLatestRelease)
+		v2.GET("/projects/:project/releases/config", h.GetReleaseConfig)
+
 		// 需要认证的路由
 		authenticated := v2.Group("/")
 		authenticated.Use(middleware.Authentication(a.config.JWT))
@@ -80,6 +88,12 @@ func (a *App) setupRoutes() {
 			
 			// 删除
 			authenticated.POST("/delete/build/download_source", h.DeleteDownloadSource)
+
+			// Release管理
+			authenticated.POST("/projects/:project/releases/config", h.SaveReleaseConfig)
+			authenticated.POST("/projects/:project/releases/sync", h.SyncReleases)
+			authenticated.GET("/admin/scheduler/status", h.GetSchedulerStatus)
+			authenticated.POST("/admin/scheduler/trigger", h.TriggerAllSync)
 		}
 	}
 
