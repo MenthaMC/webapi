@@ -3,7 +3,6 @@ package services
 import (
 	"database/sql"
 	"fmt"
-	"webapi/internal/models"
 )
 
 type VersionService struct {
