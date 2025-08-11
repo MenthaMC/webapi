@@ -32,7 +32,7 @@ func main() {
 	// 启动服务器
 	logger.Info("MenthaMC WebAPI serve (Powered by Gin)")
 	logger.Info(fmt.Sprintf("> Ready! Available at http://localhost:%d", cfg.Port))
-	
+
 	if err := application.Run(fmt.Sprintf(":%d", cfg.Port)); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}

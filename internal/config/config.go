@@ -29,6 +29,7 @@ type JWTConfig struct {
 
 type WebhookConfig struct {
 	CommitBuildURL string
+	GitHubToken    string
 }
 
 func Load() (*Config, error) {

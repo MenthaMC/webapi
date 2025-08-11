@@ -24,7 +24,7 @@ func New(cfg *config.Config, database *sql.DB) *App {
 	}
 
 	router := gin.New()
-	
+
 	// 添加中间件
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
@@ -53,6 +53,7 @@ func (a *App) setupRoutes() {
 	a.router.GET("/", h.RedirectToAPI)
 	a.router.GET("/favicon.ico", h.ServeFavicon)
 	a.router.GET("/v2/docs", h.ServeDocs)
+	a.router.GET("/v2/github/*path", h.ProxyGithubApi)
 	a.router.GET("/v2/api", h.ServeAPISpec)
 
 	// API 路由组
@@ -77,7 +78,7 @@ func (a *App) setupRoutes() {
 			// 提交
 			authenticated.POST("/commit/build", h.CommitBuild)
 			authenticated.POST("/commit/build/download_source", h.CommitDownloadSource)
-			
+
 			// 删除
 			authenticated.POST("/delete/build/download_source", h.DeleteDownloadSource)
 		}
