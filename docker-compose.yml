@@ -7,7 +7,7 @@ services:
       - "32767:32767"
     environment:
       - PORT=32767
-      - DB_URL=postgres://webapi:password@db:5432/webapi?sslmode=disable
+      - DB_URL=postgres://postgres:20100422@localhost:5432/webapi?sslmode=disable
       - LOG_LEVEL=info
       - API_PUBLIC_KEY=${API_PUBLIC_KEY}
       - API_PRIVATE_KEY=${API_PRIVATE_KEY}
