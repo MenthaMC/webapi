@@ -29,7 +29,12 @@ type JWTConfig struct {
 
 type WebhookConfig struct {
 	CommitBuildURL string
-	GitHubToken    string
+}
+
+type GitHubConfig struct {
+	Token    string
+	ApiBase  string
+	Proxy    string
 }
 
 func Load() (*Config, error) {
@@ -58,6 +63,11 @@ func Load() (*Config, error) {
 		},
 		Webhook: WebhookConfig{
 			CommitBuildURL: os.Getenv("COMMIT_BUILD_WEBHOOK_URL"),
+		},
+		GitHub: GitHubConfig{
+			Token:   os.Getenv("GITHUB_TOKEN"),
+			ApiBase: getEnvDefault("GITHUB_API_BASE", "https://api.github.com"),
+			Proxy:   os.Getenv("GITHUB_PROXY"),
 		},
 	}
 
