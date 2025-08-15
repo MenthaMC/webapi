@@ -13,6 +13,7 @@ type Config struct {
 	LogLevel string
 	JWT      JWTConfig
 	Webhook  WebhookConfig
+	GitHub   GitHubConfig
 }
 
 type DatabaseConfig struct {
