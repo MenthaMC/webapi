@@ -10,23 +10,22 @@ import (
 )
 
 func (h *Handlers) ProxyGithubApi(c *gin.Context) {
-	targetUrl := "https://api.github.com" + c.Param("path")
-
-	target, err := url.Parse(targetUrl)
-	if err != nil {
-		c.String(http.StatusBadRequest, "Invalid target URL")
-		return
-	}
+	target, _ := url.Parse("https://api.github.com")
 
 	proxy := httputil.NewSingleHostReverseProxy(target)
 
 	proxy.Director = func(req *http.Request) {
-		req.URL = target
-		req.Host = target.Host
-		req.Header = c.Request.Header
+		req.Method = c.Request.Method
+
+		req.Header = c.Request.Header.Clone()
+
 		req.Header.Set("Authorization", "token "+os.Getenv("GITHUB_TOKEN"))
 
-		req.Method = c.Request.Method
+		req.URL.Scheme = target.Scheme
+		req.URL.Host = target.Host
+
+		req.URL.Path = c.Request.URL.Path[len("/github"):]
+		req.URL.RawQuery = c.Request.URL.RawQuery
 	}
 
 	proxy.ServeHTTP(c.Writer, c.Request)
